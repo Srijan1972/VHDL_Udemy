@@ -1,17 +1,17 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-
-entity Full_Adder is
+entity Full_Adder_2 is
 port (
 	S			: out std_logic;
 	C_out		: out std_logic;
 	x			: in std_logic;
 	y			: in std_logic;
 	C_in		: in std_logic);
-end Full_Adder;
+end Full_Adder_2;
 
-architecture behavior of Full_Adder is
+
+architecture behavior of Full_Adder_2 is
 
 signal inputs	: std_logic_vector(2 downto 0);
 signal outputs	: std_logic_vector(1 downto 0);

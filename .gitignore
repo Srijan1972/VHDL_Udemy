@@ -1,0 +1,6 @@
+*.pdf
+*vsim.wlf
+*work/
+*modelsim.ini
+*.ghw
+*.cf

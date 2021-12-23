@@ -9,7 +9,7 @@ entity Full_Adder_tb is
 end;
 
 architecture test of Full_Adder_tb is
-component Full_Adder
+component Full_Adder_2
 port (
 	S		: out std_logic;
 	C_out	: out std_logic;
@@ -30,10 +30,11 @@ signal inputs 				: std_logic_vector(2 downto 0);
 signal outputs				: std_logic_vector(1 downto 0);
 
 begin
-	dev_to_test:	Full_Adder port map (
+	dev_to_test:	Full_Adder_2 port map (
 		S => s_out, C_out => c_out,
 		x => x_in, y => y_in, C_in => c_in);
 		
+	-- create test outputs
 	inputs <= c_in & y_in & x_in;
 	c_out_expected <= outputs(1);
 	s_expected <= outputs(0);
@@ -93,7 +94,7 @@ begin
 		end loop; -- i
 		
 		if (ErrCnt = 0) then
-			report "SUCCESS! Full Adder Test Completed."; wait;
+			report "SUCCESS! Full Adder Test Completed.";
 		else
 			report "The Full Adder is broken." severity warning;
 		end if;
